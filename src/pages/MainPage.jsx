@@ -106,7 +106,7 @@ const MainPage = () => {
     >
       <div
         style={{ backdropFilter: "blur(14px)" }}
-        className={`w-full sm:w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 -bottom-12 sm:bottom-4 z-20`}
+        className={`w-full sm:w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 -bottom-12 sm:bottom-4 z-30`}
       >
         <div className="space-x-1 flex text-yellow-500">
           <AiFillStar />
@@ -125,9 +125,10 @@ const MainPage = () => {
           aspectRatio: 1,
         }}
         alt=""
-        className="object-cover rounded-full"
+        className="object-cover rounded-full z-20"
         draggable={false}
       />
+      <div className="bg-black w-full h-full rounded-full absolute z-10 top-0 opacity-5"></div>
     </div>
   );
 
@@ -251,7 +252,7 @@ const MainPage = () => {
 
   const Footer = () => (
     <div className="w-full bg-zinc-100 py-12">
-      <div className="px-12 text-xs">
+      <div className="px-4 sm:px-12 text-xs">
         <div className="flex">
           <p className="font-bold mr-2">ADD.</p>
           <p>
@@ -280,7 +281,7 @@ const MainPage = () => {
           <p>장동해</p>
         </div>
       </div>
-      <div className="w-full h-24 flex items-center px-12 space-x-4 ">
+      <div className="w-full h-24 flex items-center px-4 sm:px-12 space-x-4 ">
         <button className="text-xs">FAQ</button>
         <button className="text-xs">About</button>
         <button className="text-xs">Contact</button>
@@ -289,7 +290,7 @@ const MainPage = () => {
           Legal
         </button>
       </div>
-      <div className="flex mt-2 px-12 text-xs">
+      <div className="flex mt-2 px-4 sm:px-12 text-xs">
         (C) {new Date().getFullYear()} NAMSAN COMPANY. ALL RIGHTS RESERVED.
       </div>
     </div>
