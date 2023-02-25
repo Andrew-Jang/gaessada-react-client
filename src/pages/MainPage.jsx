@@ -18,7 +18,6 @@ import { AiFillStar } from "react-icons/ai";
 const MainPage = () => {
   const navigate = useNavigate();
   const [heroIndex, setHeroIndex] = useState(0);
-  const [assetsLoaded, setAssetsLoaded] = useState(false);
 
   function preloadImage(src) {
     return new Promise((resolve, reject) => {
@@ -87,8 +86,6 @@ const MainPage = () => {
       if (isCancelled) {
         return;
       }
-
-      setAssetsLoaded(true);
     }
 
     effect();
@@ -109,7 +106,7 @@ const MainPage = () => {
     >
       <div
         style={{ backdropFilter: "blur(14px)" }}
-        className={`w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 bottom-4 z-20`}
+        className={`w-full sm:w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 -bottom-12 sm:bottom-4 z-20`}
       >
         <div className="space-x-1 flex text-yellow-500">
           <AiFillStar />
@@ -121,18 +118,16 @@ const MainPage = () => {
         <p className="text-white text-sm mt-2">{title}</p>
         <p className="text-white text-sm mt-1">{name}</p>
       </div>
-      {assetsLoaded && (
-        <img
-          src={img}
-          style={{
-            maxHeight: "32rem",
-            aspectRatio: 1,
-          }}
-          alt=""
-          className="object-cover rounded-full"
-          draggable={false}
-        />
-      )}
+      <img
+        src={img}
+        style={{
+          maxHeight: "32rem",
+          aspectRatio: 1,
+        }}
+        alt=""
+        className="object-cover rounded-full"
+        draggable={false}
+      />
     </div>
   );
 
@@ -159,7 +154,7 @@ const MainPage = () => {
             저렴한 가격으로 높은 퀄리티의 개발자를 정규직으로 채용하세요
           </h2>
         </div>
-        <div className="w-full flex justify-end items-center px-12 mt-24 mb-12">
+        <div className="w-full flex justify-end items-center px-4 sm:px-12 mt-24 sm:mb-12 mb-24">
           <HeroProfile
             img={heros[heroIndex].image}
             title={heros[heroIndex].title}
