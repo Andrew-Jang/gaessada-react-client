@@ -178,7 +178,7 @@ const MainPage = () => {
   );
 
   const ThirdSection = () => (
-    <div className="flex w-screen items-center justify-center sm:flex-row flex-col-reverse mt-24 mb-12">
+    <div className="flex w-screen items-center justify-center sm:flex-row flex-col-reverse mt-24 mb-24">
       <div className="flex flex-col items-center mt-12 sm:mt-0">
         <p className="text-4xl font-bold">40+ 다양한 스킬셋.</p>
         <p className="text-4xl font-bold mt-2">풀스텍 개발자</p>
