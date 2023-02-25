@@ -17,154 +17,154 @@ import { AiFillStar } from "react-icons/ai";
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const [heroIndex, setHeroIndex] = useState(0);
 
-  function preloadImage(src) {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.onload = function () {
-        resolve(img);
-      };
-      img.onerror = img.onabort = function () {
-        reject(src);
-      };
-      img.src = src;
-    });
-  }
+  const WelcomeSection = () => {
+    const [heroIndex, setHeroIndex] = useState(0);
 
-  const heros = [
-    {
-      image: Hero1,
-      title: "(주)픽톨로지, 웹 퍼블리셔",
-      name: "모리스 (Mo Alghazali)",
-    },
-    {
-      image: Hero4,
-      title: "(주)픽톨로지, 프론트엔드",
-      name: "세린 다우드 (Sereen Daud)",
-    },
-    {
-      image: Hero2,
-      title: "(주)버틱비, 노드 개발자",
-      name: "아마드 사피 (Ahmad Safi)",
-    },
-    {
-      image: Hero3,
-      title: "턴업, iOS 개발자",
-      name: "안드레 볼츠키 (Andre volchki)",
-    },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (heroIndex === 3) {
-        setHeroIndex(0);
-      } else {
-        setHeroIndex(heroIndex + 1);
-      }
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [heroIndex]);
-
-  useEffect(() => {
-    const preloadSrcList = [Hero1, Hero2, Hero3, Hero4];
-
-    let isCancelled = false;
-
-    async function effect() {
-      if (isCancelled) {
-        return;
-      }
-
-      const imagesPromiseList = [];
-      for (const i of preloadSrcList) {
-        imagesPromiseList.push(preloadImage(i));
-      }
-
-      await Promise.all(imagesPromiseList);
-
-      if (isCancelled) {
-        return;
-      }
+    function preloadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = function () {
+          resolve(img);
+        };
+        img.onerror = img.onabort = function () {
+          reject(src);
+        };
+        img.src = src;
+      });
     }
 
-    effect();
+    const heros = [
+      {
+        image: Hero1,
+        title: "(주)픽톨로지, 웹 퍼블리셔",
+        name: "모리스 (Mo Alghazali)",
+      },
+      {
+        image: Hero4,
+        title: "(주)픽톨로지, 프론트엔드",
+        name: "세린 다우드 (Sereen Daud)",
+      },
+      {
+        image: Hero2,
+        title: "(주)버틱비, 노드 개발자",
+        name: "아마드 사피 (Ahmad Safi)",
+      },
+      {
+        image: Hero3,
+        title: "턴업, iOS 개발자",
+        name: "안드레 볼츠키 (Andre volchki)",
+      },
+    ];
+    useEffect(() => {
+      const interval = setInterval(() => {
+        if (heroIndex === 3) {
+          setHeroIndex(0);
+        } else {
+          setHeroIndex(heroIndex + 1);
+        }
+      }, 6000);
+      return () => clearInterval(interval);
+    }, [heroIndex]);
 
-    return () => {
-      isCancelled = true;
-    };
-  }, []);
+    useEffect(() => {
+      const preloadSrcList = [Hero1, Hero2, Hero3, Hero4];
 
-  const HeroProfile = ({ img, title, name }) => (
-    <div
-      style={{
-        maxHeight: "32rem",
-        maxWidth: "32rem",
-        animation: "fade 6s infinite",
-      }}
-      className="relative w-full"
-    >
+      let isCancelled = false;
+
+      async function effect() {
+        if (isCancelled) {
+          return;
+        }
+
+        const imagesPromiseList = [];
+        for (const i of preloadSrcList) {
+          imagesPromiseList.push(preloadImage(i));
+        }
+
+        await Promise.all(imagesPromiseList);
+
+        if (isCancelled) {
+          return;
+        }
+      }
+
+      effect();
+
+      return () => {
+        isCancelled = true;
+      };
+    }, []);
+    const HeroProfile = ({ img, title, name }) => (
       <div
-        style={{ backdropFilter: "blur(14px)" }}
-        className={`w-full sm:w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 -bottom-12 sm:bottom-4 z-30`}
-      >
-        <div className="space-x-1 flex text-yellow-500">
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-        </div>
-        <p className="text-white text-sm mt-2">{title}</p>
-        <p className="text-white text-sm mt-1">{name}</p>
-      </div>
-      <img
-        src={img}
         style={{
           maxHeight: "32rem",
-          aspectRatio: 1,
+          maxWidth: "32rem",
+          animation: "fade 6s infinite",
         }}
-        alt=""
-        className="object-cover rounded-full z-20"
-        draggable={false}
-      />
-      <div className="bg-black w-full h-full rounded-full absolute z-10 top-0 opacity-5"></div>
-    </div>
-  );
-
-  const WelcomeSection = () => (
-    <div
-      style={{ minHeight: "42rem" }}
-      className={`flex h-full items-center flex-col sm:flex-row z-20 w-screen relative justify-center transition bg-gradient-to-b from-green-900 to-emerald-900`}
-    >
-      <div
-        style={{ maxWidth: "1400px" }}
-        className="w-full relative h-full flex px-6 sm:flex-row flex-col items-center"
+        className="relative w-full"
       >
-        <div className="flex flex-col justify-center max-w-2xl h-full z-20 sm:mt-0 mt-48">
-          <img
-            src={Sample2}
-            alt=""
-            className="object-contain"
-            draggable={false}
-          />
-          <h2
-            className="text-white text-lg mt-8 font-nanum font-thin"
-            draggable={false}
-          >
-            저렴한 가격으로 높은 퀄리티의 개발자를 정규직으로 채용하세요
-          </h2>
+        <div
+          style={{ backdropFilter: "blur(14px)" }}
+          className={`w-full sm:w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 -bottom-12 sm:bottom-4 z-30`}
+        >
+          <div className="space-x-1 flex text-yellow-500">
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+          </div>
+          <p className="text-white text-sm mt-2">{title}</p>
+          <p className="text-white text-sm mt-1">{name}</p>
         </div>
-        <div className="w-full flex justify-end items-center px-4 sm:px-12 mt-24 sm:mb-12 mb-24">
-          <HeroProfile
-            img={heros[heroIndex].image}
-            title={heros[heroIndex].title}
-            name={heros[heroIndex].name}
-          />
+        <img
+          src={img}
+          style={{
+            maxHeight: "32rem",
+            aspectRatio: 1,
+          }}
+          alt=""
+          className="object-cover rounded-full z-20"
+          draggable={false}
+        />
+        <div className="bg-black w-full h-full rounded-full absolute z-10 top-0 opacity-5"></div>
+      </div>
+    );
+    return (
+      <div
+        style={{ minHeight: "42rem" }}
+        className={`flex h-full items-center flex-col sm:flex-row z-20 w-screen relative justify-center transition bg-gradient-to-b from-green-900 to-emerald-900`}
+      >
+        <div
+          style={{ maxWidth: "1400px" }}
+          className="w-full relative h-full flex px-6 sm:flex-row flex-col items-center"
+        >
+          <div className="flex flex-col justify-center max-w-2xl h-full z-20 sm:mt-0 mt-48">
+            <img
+              src={Sample2}
+              alt=""
+              className="object-contain"
+              draggable={false}
+            />
+            <h2
+              className="text-white text-lg mt-8 font-nanum font-thin"
+              draggable={false}
+            >
+              저렴한 가격으로 높은 퀄리티의 개발자를 정규직으로 채용하세요
+            </h2>
+          </div>
+          <div className="w-full flex justify-end items-center px-4 sm:px-12 mt-24 sm:mb-12 mb-24">
+            <HeroProfile
+              img={heros[heroIndex].image}
+              title={heros[heroIndex].title}
+              name={heros[heroIndex].name}
+            />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const ClientSection = () => (
     <div className="py-12 sm:py-0 w-screen sm:h-24 flex bg-zinc-100 sm:flex-row flex-col items-center justify-center space-y-12 sm:space-y-0 sm:space-x-16">
