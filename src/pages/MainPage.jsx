@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Hero1 from "../assets/hero1.jpg";
 import Hero2 from "../assets/hero2.jpg";
 import Hero3 from "../assets/hero3.png";
-import Hero4 from "../assets/hero4.jpg";
+import Hero4 from "../assets/hero4.png";
 import Client1 from "../assets/client1.webp";
 import Client2 from "../assets/client2.png";
 import Client3 from "../assets/client3.png";
@@ -102,7 +102,7 @@ const MainPage = () => {
         maxWidth: "32rem",
         animation: "fade 6s infinite",
       }}
-      className="relative w-full h-full"
+      className="relative w-full"
     >
       <div
         style={{ backdropFilter: "blur(14px)" }}
