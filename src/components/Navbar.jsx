@@ -24,14 +24,15 @@ const Navbar = () => {
           style={{ filter: "brightness(0) invert(1)" }}
           src={Logo}
           alt="Turnup logo"
-          className="w-32 object-contain"
+          className="w-28 object-contain"
           draggable={false}
         />
       </button>
-      <div className="space-x-3 sm:space-x-4 font-poppins sm:text-base text-sm w-96 hidden md:flex">
-        <NavButton title="서비스 소개" />
-        <NavButton title="클라이언트" />
-        <NavButton title="세일즈 문의" />
+      <div className="space-x-3 sm:space-x-4 font-poppins sm:text-base text-sm md:flex justify-end items-center">
+        <NavButton title="문의하기" />
+        <button className="transition rounded-lg h-9 px-4 font-bold font-nanum bg-white text-black">
+          로그인
+        </button>
       </div>
     </header>
   );

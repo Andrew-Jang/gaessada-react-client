@@ -30,18 +30,6 @@ const MainPage = () => {
     return () => clearInterval(interval);
   }, [heroIndex]);
 
-  const Footer = () => (
-    <div className="w-full h-24 flex items-center px-12 space-x-4 ">
-      <button className="text-xs">FAQ</button>
-      <button className="text-xs">About</button>
-      <button className="text-xs">Contact</button>
-      <button className="text-xs">Careers</button>
-      <button className="text-xs" onClick={() => navigate("/legal")}>
-        Legal
-      </button>
-    </div>
-  );
-
   const HeroProfile = ({
     img = Hero1,
     top,
@@ -98,7 +86,7 @@ const MainPage = () => {
             className="text-white text-lg mt-8 font-nanum font-thin"
             draggable={false}
           >
-            상위 3% 글로벌 개발자를 정규직으로 채용하세요
+            저렴한 가격으로 높은 퀄리티의 개발자를 정규직으로 채용하세요
           </h2>
         </div>
         <div className="w-full flex justify-end items-center px-12 mt-24 mb-12">
@@ -171,11 +159,11 @@ const MainPage = () => {
   );
 
   const SecondSection = () => (
-    <div className="flex w-screen items-center justify-center">
+    <div className="flex w-screen items-center justify-center sm:flex-row flex-col">
       <img src={Lanyard} alt="" />
-      <div className="flex flex-col items-center ml-16 mt-48">
+      <div className="flex flex-col items-center sm:ml-16 sm:mt-48 mt-12">
         <p className="text-4xl font-bold">219명의 글로벌 인재를</p>
-        <p className="text-4xl font-bold">만나보세요.</p>
+        <p className="text-4xl font-bold mt-2">만나보세요.</p>
         <p className="text-xs mt-2">(*23년 2월 24일 기준)</p>
         <p className="mt-6">UI/UX 퍼블리셔부터, 모바일 앱,</p>
         <p>결제시스템, DB 설계, AI 백엔드 개발자까지,</p>
@@ -183,8 +171,77 @@ const MainPage = () => {
         <p>실력이 검증된 개발자가 기다리고 있어요.</p>
 
         <button className="mt-16 font-bold text-blue-500 text-xl">
-          스킬셋 자세히 보기 {">"}
+          스킬셋 자세히 보기 {"↓"}
         </button>
+      </div>
+    </div>
+  );
+
+  const ThirdSection = () => (
+    <div className="flex w-screen items-center justify-center sm:flex-row flex-col-reverse mt-24 mb-12">
+      <div className="flex flex-col items-center mt-12 sm:mt-0">
+        <p className="text-4xl font-bold">40+ 다양한 스킬셋.</p>
+        <p className="text-4xl font-bold mt-2">풀스텍 개발자</p>
+        <p className="mt-6">
+          저희 개발자들은 다양한 스킬셋을 보유하고 있습니다.
+        </p>
+        <p className="mt-6">
+          필요한 기술 스택이나 툴셋이 있으시다면 문의해주세요,
+        </p>
+        <p>가능한 한 그에 맞는 개발자를 매칭 해드릴 수 있습니다.</p>
+        <p className="mt-4">AI, 빅데이터, 블록체인 등 세부적인</p>
+        <p>스킬셋이 필요하시면 문의해주세요.</p>
+
+        <button className="mt-16 font-bold text-blue-500 text-xl">
+          문의하기 {">"}
+        </button>
+      </div>
+      <img src={TechStack} alt="" className="sm:px-12 px-4 -mr-4 sm:w-1/3" />
+    </div>
+  );
+
+  const Footer = () => (
+    <div className="w-full bg-zinc-100 py-12">
+      <div className="px-12 text-xs">
+        <div className="flex">
+          <p className="font-bold mr-2">ADD.</p>
+          <p>
+            서울특별시 중구 퇴계로 18길 33 504호 남산컴퍼니 · Toegye-RO 18-GIL,
+            33 Jung-GU, SEOUL, SOUTH KOREA
+          </p>
+        </div>
+        <div className="flex mt-2">
+          <p className="font-bold mr-2">TEL.</p>
+          <p>+82 (0)10-3101-6825</p>
+        </div>
+        <div className="flex mt-2">
+          <p className="font-bold mr-2">EMAIL.</p>
+          <p>info@namsancompany.com</p>
+        </div>
+        <div className="flex mt-2">
+          <p className="font-bold mr-2">사업자등록번호.</p>
+          <p>250-87-02467</p>
+        </div>
+        <div className="flex mt-2">
+          <p className="font-bold mr-2">회사명.</p>
+          <p>(주)남산컴퍼니</p>
+        </div>
+        <div className="flex mt-2">
+          <p className="font-bold mr-2">대표이사.</p>
+          <p>장동해</p>
+        </div>
+      </div>
+      <div className="w-full h-24 flex items-center px-12 space-x-4 ">
+        <button className="text-xs">FAQ</button>
+        <button className="text-xs">About</button>
+        <button className="text-xs">Contact</button>
+        <button className="text-xs">Careers</button>
+        <button className="text-xs" onClick={() => navigate("/legal")}>
+          Legal
+        </button>
+      </div>
+      <div className="flex mt-2 px-12 text-xs">
+        (C) {new Date().getFullYear()} NAMSAN COMPANY. ALL RIGHTS RESERVED.
       </div>
     </div>
   );
@@ -195,7 +252,7 @@ const MainPage = () => {
       <WelcomeSection />
       <ClientSection />
       <SecondSection />
-      <img src={TechStack} alt=""/>
+      <ThirdSection />
       <Footer />
     </div>
   );
