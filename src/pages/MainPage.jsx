@@ -18,6 +18,43 @@ import { AiFillStar } from "react-icons/ai";
 const MainPage = () => {
   const navigate = useNavigate();
   const [heroIndex, setHeroIndex] = useState(0);
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  function preloadImage(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = function () {
+        resolve(img);
+      };
+      img.onerror = img.onabort = function () {
+        reject(src);
+      };
+      img.src = src;
+    });
+  }
+
+  const heros = [
+    {
+      image: Hero1,
+      title: "(주)픽톨로지, 웹 퍼블리셔",
+      name: "모리스 (Mo Alghazali)",
+    },
+    {
+      image: Hero4,
+      title: "(주)픽톨로지, 프론트엔드",
+      name: "세린 다우드 (Sereen Daud)",
+    },
+    {
+      image: Hero2,
+      title: "(주)버틱비, 노드 개발자",
+      name: "아마드 사피 (Ahmad Safi)",
+    },
+    {
+      image: Hero3,
+      title: "턴업, iOS 개발자",
+      name: "안드레 볼츠키 (Andre volchki)",
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,21 +67,49 @@ const MainPage = () => {
     return () => clearInterval(interval);
   }, [heroIndex]);
 
-  const HeroProfile = ({
-    img = Hero1,
-    top,
-    title = "(주)픽톨로지, 웹 퍼블리셔",
-    name = "모리스 (Mo Alghazali)",
-  }) => (
+  useEffect(() => {
+    const preloadSrcList = [Hero1, Hero2, Hero3, Hero4];
+
+    let isCancelled = false;
+
+    async function effect() {
+      if (isCancelled) {
+        return;
+      }
+
+      const imagesPromiseList = [];
+      for (const i of preloadSrcList) {
+        imagesPromiseList.push(preloadImage(i));
+      }
+
+      await Promise.all(imagesPromiseList);
+
+      if (isCancelled) {
+        return;
+      }
+
+      setAssetsLoaded(true);
+    }
+
+    effect();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  const HeroProfile = ({ img, title, name }) => (
     <div
-      style={{ maxHeight: "32rem", maxWidth: "32rem" }}
+      style={{
+        maxHeight: "32rem",
+        maxWidth: "32rem",
+        animation: "fade 6s infinite",
+      }}
       className="relative w-full h-full"
     >
       <div
         style={{ backdropFilter: "blur(14px)" }}
-        className={`w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 ${
-          top ? "top-12" : "bottom-4"
-        }`}
+        className={`w-64 h-24 bg-black absolute left-0 bg-opacity-40 rounded-xl flex flex-col justify-center px-4 bottom-4 z-20`}
       >
         <div className="space-x-1 flex text-yellow-500">
           <AiFillStar />
@@ -56,13 +121,18 @@ const MainPage = () => {
         <p className="text-white text-sm mt-2">{title}</p>
         <p className="text-white text-sm mt-1">{name}</p>
       </div>
-      <img
-        src={img}
-        style={{ maxHeight: "32rem", aspectRatio: 1 }}
-        alt=""
-        className="object-cover rounded-full"
-        draggable={false}
-      />
+      {assetsLoaded && (
+        <img
+          src={img}
+          style={{
+            maxHeight: "32rem",
+            aspectRatio: 1,
+          }}
+          alt=""
+          className="object-cover rounded-full"
+          draggable={false}
+        />
+      )}
     </div>
   );
 
@@ -90,27 +160,11 @@ const MainPage = () => {
           </h2>
         </div>
         <div className="w-full flex justify-end items-center px-12 mt-24 mb-12">
-          {heroIndex === 0 ? (
-            <HeroProfile />
-          ) : heroIndex === 1 ? (
-            <HeroProfile
-              img={Hero4}
-              title="(주)픽톨로지, 프론트엔드"
-              name="세린 다우드 (Sereen Daud)"
-            />
-          ) : heroIndex === 2 ? (
-            <HeroProfile
-              img={Hero2}
-              title="(주)버틱비, 노드 개발자"
-              name="아마드 사피 (Ahmad Safi)"
-            />
-          ) : (
-            <HeroProfile
-              img={Hero3}
-              title="턴업, iOS 개발자"
-              name="안드레 볼츠키 (Andre volchki)"
-            />
-          )}
+          <HeroProfile
+            img={heros[heroIndex].image}
+            title={heros[heroIndex].title}
+            name={heros[heroIndex].name}
+          />
         </div>
       </div>
     </div>

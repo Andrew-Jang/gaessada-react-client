@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  15%, 85% { opacity: 1 }
+}
