@@ -16,9 +16,12 @@ import FourthType4 from "../assets/main/type4.png";
 import FourthType5 from "../assets/main/type5.png";
 import FourthType6 from "../assets/main/type6.png";
 import Process1 from "../assets/main/process1.png";
-// import Process2 from "../assets/main/process2.png";
-// import Process3 from "../assets/main/process3.png";
-// import Process4 from "../assets/main/process4.png";
+import Process2 from "../assets/main/process2.png";
+import Process3 from "../assets/main/process3.png";
+import Process4 from "../assets/main/process4.png";
+import LeftArrow from "../assets/main/left_arrow.png";
+import RightArrow from "../assets/main/right_arrow.png";
+import Checkmark from "../assets/main/checkmark.png";
 import TechStack from "../assets/techstack.png";
 import WelcomeText from "../assets/welcome_text.png";
 import Lanyard from "../assets/lanyard.png";
@@ -333,19 +336,141 @@ const MainPage = () => {
     );
   };
 
-  const FifthSection = () => (
-    <div
-      style={{ backgroundColor: "#FAFAFD" }}
-      className="flex w-screen items-center justify-center sm:flex-row flex-col-reverse py-24"
-    >
-      <div
-        style={{ maxWidth: "1280px" }}
-        className="flex"
+  const FifthSection = () => {
+    const [progressIndex, setProgressIndex] = useState(0);
+    const progressData = [
+      {
+        img: Process1,
+        step: "Step 1",
+        title: "우리 기업에 필요한 인재의 기술력과 요구사항을 간편하게 등록하세요!",
+        text1:
+          "여러 명의 인재가 필요할 경우 여러 개의 채용 공고를 등록할 수 있습니다.",
+        text2:
+          "프런트엔드, 백엔드, AWS 기능사 등 자세히 등록할수록 효율적으로 개발자 매칭이 됩니다.",
+      },
+      {
+        img: Process2,
+        step: "Step 2",
+        title: "채용 등록을 마치면 적합한 다수의 해외 개발자와 매칭됩니다.",
+        text1:
+          "여러명의 개발자와 대화를 통해 우리 기업에 필요한 최고의 적합자를 찾을 수 있습니다.",
+        text2: "매칭된 개발자와 마일스톤에 대해 소통하고 합의 할 수 있습니다.",
+      },
+      {
+        img: Process3,
+        step: "Step 3",
+        title: "어시스턴트에게 마일스톤 검증을 요청할 수 있습니다.",
+        text1:
+          "업무 범위와 일정 등을 협의한 후 어시스턴트에게 검증을 요청해 안전한 계약을 할 수 있습니다.",
+        text2:
+          "철저한 채용 시스템을 통해 분쟁 걱정 없이 채용을 하되 혹시 모를 상황에 대비해서 어시스턴트가 분쟁 해결을 도와줍니다.",
+      },
+      {
+        img: Process4,
+        step: "Step 4",
+        title: "기업의 만족도를 우선시하는 해외 개발자 채용 시스템은 시작일 뿐입니다.",
+        text1: "에스크로를 통해 대금을 안전하게 처리할 수 있습니다.",
+        text2: "문제가 생기면 언제든지 어시스턴트한테 요청 할 수 있습니다.",
+      },
+    ];
+    const BarCell = ({ title, index }) => (
+      <button
+        onClick={() => setProgressIndex(index)}
+        className="flex flex-col items-center w-full group transition"
       >
-        <img src={Process1} alt="" className="max-w-4xl w-full px-4" />
+        <p
+          className={`${
+            progressIndex !== index
+              ? "text-gray-400 group-hover:text-gray-500"
+              : "text-black font-bold"
+          } font-poppins mb-4 sm:text-sm text-xs transition`}
+        >
+          {title}
+        </p>
+        <div
+          style={{ backgroundColor: progressIndex >= index && "#1FAD72" }}
+          className="w-full h-1 group-hover:bg-gray-300 bg-gray-200 transition"
+        ></div>
+      </button>
+    );
+    const IndexCell = () => (
+      <div className="flex p-8 w-full">
+        <div className="sm:w-1/2 w-full">
+          <p style={{ color: "#1FAD72" }} className="font-nanum font-bold text">
+            {progressData[progressIndex].step}
+          </p>
+
+          <p className="font-nanum font-bold text-lg mt-8 break-keep">
+            {progressData[progressIndex].title}
+          </p>
+
+          <div className="mt-8">
+            <div className="flex items-start">
+              <img src={Checkmark} className="w-3 object-contain" alt="" />
+              <p className="text-xs font-nanum ml-2 break-keep">
+                {progressData[progressIndex].text1}
+              </p>
+            </div>
+            <div className="flex items-start mt-4">
+              <img src={Checkmark} className="w-3 object-contain" alt="" />
+              <p className="text-xs font-nanum ml-2 break-keep">
+                {progressData[progressIndex].text2}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="hidden sm:flex w-1/2 max-h-72 h-full">
+          <img
+            src={progressData[progressIndex].img}
+            alt=""
+            className="w-full h-full hidden sm:flex max-h-72 object-contain"
+            draggable={false}
+          />
+        </div>
       </div>
-    </div>
-  );
+    );
+    return (
+      <div
+        style={{ backgroundColor: "#FAFAFD" }}
+        className="flex w-screen items-center justify-center sm:flex-row flex-col-reverse py-24"
+      >
+        <div
+          style={{ maxWidth: "1280px" }}
+          className="flex flex-col w-full items-center h-full px-4"
+        >
+          <p className="font-nanum text-lg mb-16 px-4 max-w-4xl w-full">
+            채용 등록부터 완료까지 안전하고 빠른 절차로 시작하세요.
+          </p>
+
+          <div className="flex w-full mb-12 max-w-4xl px-4">
+            <BarCell index={0} title={"1. 채용 등록"} />
+            <BarCell index={1} title={"2. 개발자 매칭"} />
+            <BarCell index={2} title={"3. 마일스톤 검증"} />
+            <BarCell index={3} title={"4. 채용 완료"} />
+          </div>
+          <div className="max-w-4xl w-full flex h-full">
+            <button
+              onClick={() =>
+                progressIndex > 0 && setProgressIndex(progressIndex - 1)
+              }
+              className="w-8 h-80 hover:bg-gray-100 flex items-center px-2 transition"
+            >
+              <img src={LeftArrow} alt="" />
+            </button>
+            <IndexCell />
+            <button
+              onClick={() =>
+                progressIndex < 3 && setProgressIndex(progressIndex + 1)
+              }
+              className="w-8 h-80 hover:bg-gray-100 flex items-center px-2 transition"
+            >
+              <img src={RightArrow} alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const SixthSection = () => {
     return (
