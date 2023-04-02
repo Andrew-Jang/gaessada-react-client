@@ -116,7 +116,7 @@ const Footer = () => {
         style={{ maxWidth: "1280px" }}
         className="w-full flex justify-center border-t border-gray-700 mt-12 py-6 px-4 text-xs"
       >
-        © {new Date().getFullYear()} NAMSAN COMPANY. ALL RIGHTS RESERVED.
+        © {new Date().getFullYear()} NAMSAN COMPANY INC. ALL RIGHTS RESERVED.
       </div>
     </div>
   );

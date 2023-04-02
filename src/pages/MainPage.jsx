@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import Hero1 from "../assets/hero1.jpg";
-import Hero2 from "../assets/hero2.jpg";
-import Hero3 from "../assets/hero3.png";
-import Hero4 from "../assets/hero4.png";
-import Client1 from "../assets/client1.png";
-import Client2 from "../assets/client2.png";
-import Client3 from "../assets/client3.png";
-import Client4 from "../assets/client4.png";
-import Client5 from "../assets/client5.png";
+import Hero1 from "../assets/main/hero1.jpg";
+import Hero2 from "../assets/main/hero2.jpg";
+import Hero3 from "../assets/main/hero3.png";
+import Hero4 from "../assets/main/hero4.png";
+import Client1 from "../assets/main/client1.png";
+import Client2 from "../assets/main/client2.png";
+import Client3 from "../assets/main/client3.png";
+import Client4 from "../assets/main/client4.png";
+import Client5 from "../assets/main/client5.png";
 import FourthType1 from "../assets/main/type1.png";
 import FourthType2 from "../assets/main/type2.png";
 import FourthType3 from "../assets/main/type3.png";
@@ -22,9 +22,9 @@ import Process4 from "../assets/main/process4.png";
 import LeftArrow from "../assets/main/left_arrow.png";
 import RightArrow from "../assets/main/right_arrow.png";
 import Checkmark from "../assets/main/checkmark.png";
-import TechStack from "../assets/techstack.png";
+import TechStack from "../assets/main/techstack.png";
 import WelcomeText from "../assets/welcome_text.png";
-import Lanyard from "../assets/lanyard.png";
+import Lanyard from "../assets/main/lanyard.png";
 import Partner1 from "../assets/main/partner1.png";
 import { AiFillStar } from "react-icons/ai";
 import Footer from "../components/Footer";
@@ -229,7 +229,7 @@ const MainPage = () => {
         style={{ maxWidth: "1280px" }}
         className="flex items-center justify-between sm:flex-row flex-col px-4 sm:space-x-24 sm:pr-12"
       >
-        <img src={Lanyard} alt="" className="max-w-xs -mt-12" />
+        <img src={Lanyard} alt="" className="max-w-xs -mt-12" draggable={false} />
         <div className="flex flex-col items-center sm:ml-16 sm:mt-32 mt-12 font-nanum">
           <p className="text-3xl font-bold">219명의 글로벌 인재를</p>
           <p className="text-3xl font-bold mt-2">만나보세요.</p>
@@ -238,9 +238,9 @@ const MainPage = () => {
           <p className="mt-6">사전 테스트와 평점 시스템을 통해</p>
           <p>실력이 검증된 개발자가 기다리고 있어요.</p>
 
-          <button className="mt-16 text-xs w-full flex justify-end">
+          <div className="mt-16 text-xs w-full flex justify-end">
             2023년 2월 기준
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -265,11 +265,11 @@ const MainPage = () => {
           <p className="mt-6">AI, 빅데이터, 블록체인 등 전문적인</p>
           <p>스킬셋이 필요하시면 문의해 주세요.</p>
 
-          <button className="mt-16 text-xs w-full flex justify-end">
+          <div className="mt-16 text-xs w-full flex justify-end">
             2023년 2월 기준
-          </button>
+          </div>
         </div>
-        <img src={TechStack} alt="" className="max-w-lg px-4" />
+        <img src={TechStack} alt="" className="max-w-lg px-4" draggable={false} />
       </div>
     </div>
   );
@@ -277,7 +277,7 @@ const MainPage = () => {
   const FourthSection = () => {
     const Cell = ({ icon, title, text1, text2 }) => (
       <div className="flex flex-col items-center font-nanum">
-        <img src={icon} className="w-16" alt="" />
+        <img src={icon} className="w-16" alt="" draggable={false} />
         <p className="font-semibold mt-4">{title}</p>
         <p style={{ fontSize: "0.85rem" }} className="text-sm mt-4">
           {text1}
@@ -483,7 +483,7 @@ const MainPage = () => {
           <p className="font-nanum mt-2 mb-16">
             남산컴퍼니는 아래의 단체와 함께합니다.
           </p>
-          <img src={Partner1} alt="" className="h-20" />
+          <img src={Partner1} alt="" className="h-20" draggable={false} />
         </div>
       </div>
     );
