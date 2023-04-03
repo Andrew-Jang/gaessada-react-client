@@ -7,12 +7,14 @@ import Privacy from "./pages/Privacy";
 import Legal from "./pages/Legal";
 import PaymentTerms from "./pages/PaymentTerms";
 import ServiceCompany from "./pages/ServiceCompany";
+import ServiceDeveloper from "./pages/ServiceDeveloper";
 
 function App() {
   return (
     <Routes>
       <Route path="/*" element={<MainPage />} />
       <Route path="/service/company" element={<ServiceCompany />} />
+      <Route path="/service/developer" element={<ServiceDeveloper />} />
       <Route path="legal/" element={<Legal />} />
       <Route path="legal/terms-of-use" element={<TermsPage />} />
       <Route path="legal/privacy-policy" element={<Privacy />} />

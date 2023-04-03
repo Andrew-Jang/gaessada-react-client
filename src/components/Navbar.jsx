@@ -5,11 +5,17 @@ import { MdOutlinePerson, MdWorkOutline } from "react-icons/md";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import { IoReorderThreeOutline } from "react-icons/io5";
 
-const Navbar = ({light}) => {
-
+const Navbar = ({ light }) => {
   const SolutionDropdown = () => (
     <ul className="bg-white text-black rounded-lg p-5 w-72">
-      <p className="font-semibold font-sans text-gray-600">For</p>
+      <div className="flex">
+        <p
+          style={{ color: "#1FAD72", fontSize:'0.5rem' }}
+          className="font-black text-xs font-nanum text-white py-1 rounded-full"
+        >
+          누구신가요?
+        </p>
+      </div>
       <a
         href="/service/company"
         className="w-full h-16 text-gray-700 text-sm flex items-center group hover:text-blue-500 font-medium"
@@ -28,7 +34,7 @@ const Navbar = ({light}) => {
         </div>
       </a>
       <a
-        href="/service"
+        href="/service/developer"
         className="w-full h-16 text-gray-700 text-sm flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center space-x-4">
@@ -44,6 +50,14 @@ const Navbar = ({light}) => {
           </div>
         </div>
       </a>
+      <div className="flex mt-4">
+        <p
+          style={{ color: "#1FAD72", fontSize:'0.5rem' }}
+          className="font-black text-xs font-nanum text-white py-1 rounded-full"
+        >
+          추가 구독 서비스
+        </p>
+      </div>
       <a
         href="/service"
         className="w-full h-16 text-gray-700 text-sm flex items-center group hover:text-blue-500 font-medium"
@@ -56,7 +70,7 @@ const Navbar = ({light}) => {
           <div className="w-full flex flex-col items-start space-y-px">
             <p className="font-semibold">어시스턴트 / PM</p>
             <p className="text-xs text-gray-500 group-hover:text-blue-500">
-              소통 보조 및 프로젝트 관리
+              통역/소통 보조 및 프로젝트 관리
             </p>
           </div>
         </div>
@@ -181,7 +195,9 @@ const Navbar = ({light}) => {
   return (
     <header
       style={{ maxWidth: "1280px" }}
-      className={`${light ? "text-black" : "text-white"} w-full flex h-16 px-4 items-center justify-between z-50 flex-shrink-0 absolute top-0`}
+      className={`${
+        light ? "text-black" : "text-white"
+      } w-full flex h-16 px-4 items-center justify-between z-50 flex-shrink-0 absolute top-0`}
     >
       <div className="flex items-center text-sm font-nanum">
         <a
