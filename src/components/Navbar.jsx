@@ -5,13 +5,13 @@ import { MdOutlinePerson, MdWorkOutline } from "react-icons/md";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import { IoReorderThreeOutline } from "react-icons/io5";
 
-const Navbar = () => {
+const Navbar = ({light}) => {
 
   const SolutionDropdown = () => (
     <ul className="bg-white text-black rounded-lg p-5 w-72">
       <p className="font-semibold font-sans text-gray-600">For</p>
       <a
-        href="/service"
+        href="/service/company"
         className="w-full h-16 text-gray-700 text-sm flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center space-x-4">
@@ -181,13 +181,13 @@ const Navbar = () => {
   return (
     <header
       style={{ maxWidth: "1280px" }}
-      className="w-full flex h-16 px-4 items-center justify-between z-50 flex-shrink-0 text-white absolute top-0"
+      className={`${light ? "text-black" : "text-white"} w-full flex h-16 px-4 items-center justify-between z-50 flex-shrink-0 absolute top-0`}
     >
       <div className="flex items-center text-sm font-nanum">
         <a
           href="https://namsancompany.com"
           aria-label="Homepage"
-          className="flex items-center justify-center text-white flex-shrink-0 transform transition hover:scale-105 mr-3"
+          className="flex items-center justify-center flex-shrink-0 transform transition hover:scale-105 mr-3"
         >
           <img
             src={LogoSimple}
@@ -209,15 +209,15 @@ const Navbar = () => {
         </button>
       </div>
       <div className="hidden sm:flex space-x-1 font-poppins sm:text-base text-sm justify-end items-center">
-        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum font-light text-sm text-white">
+        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum font-light text-sm">
           로그인
         </button>
-        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum font-light text-sm border text-white">
+        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum font-light text-sm border">
           회원가입
         </button>
       </div>
 
-      <button className="sm:hidden transition hover:opacity-75 rounded-lg text-white">
+      <button className="sm:hidden transition hover:opacity-75 rounded-lg">
         <IoReorderThreeOutline size={36} />
       </button>
     </header>
