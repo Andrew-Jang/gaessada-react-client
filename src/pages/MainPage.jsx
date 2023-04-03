@@ -231,7 +231,7 @@ const MainPage = () => {
       >
         <img src={Lanyard} alt="" className="max-w-xs -mt-12" draggable={false} />
         <div className="flex flex-col items-center sm:ml-16 sm:mt-32 mt-12 font-nanum">
-          <p className="text-3xl font-bold">219명의 글로벌 인재를</p>
+          <p className="text-3xl font-bold">3000명의 글로벌 인재를</p>
           <p className="text-3xl font-bold mt-2">만나보세요.</p>
           <p className="mt-12">UI/UX 퍼블리싱부터, 프런트엔드, 백엔드,</p>
           <p>모바일 앱, DB 설계, AI, 블록체인 개발자까지</p>
