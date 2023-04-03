@@ -20,13 +20,13 @@ const ServiceDeveloper = () => {
       >
         <p
           style={{ color: "#1FAD72" }}
-          className="font-bold font-nanum text-sm"
+          className="font-bold font-nanum text-xs"
         >
-          한국 기업에서 커리어를 쌓으세요
+          한국 기업에서의 CAREER
         </p>
         <p
           style={{ color: "#272D37" }}
-          className="text-4xl font-bold mt-4 font-nanum"
+          className="text-4xl font-bold mt-6 font-nanum"
         >
           글로벌 개발자이신가요?
         </p>

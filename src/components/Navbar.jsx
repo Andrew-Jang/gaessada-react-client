@@ -10,7 +10,7 @@ const Navbar = ({ light }) => {
     <ul className="bg-white text-black rounded-lg p-5 w-72">
       <div className="flex">
         <p
-          style={{ color: "#1FAD72", fontSize:'0.5rem' }}
+          style={{ color: "#1FAD72", fontSize: "0.5rem" }}
           className="font-black text-xs font-nanum text-white py-1 rounded-full"
         >
           누구신가요?
@@ -52,14 +52,14 @@ const Navbar = ({ light }) => {
       </a>
       <div className="flex mt-4">
         <p
-          style={{ color: "#1FAD72", fontSize:'0.5rem' }}
+          style={{ color: "#1FAD72", fontSize: "0.5rem" }}
           className="font-black text-xs font-nanum text-white py-1 rounded-full"
         >
           추가 구독 서비스
         </p>
       </div>
       <a
-        href="/service"
+        href="/pricing"
         className="w-full h-16 text-gray-700 text-sm flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center space-x-4">
@@ -149,21 +149,21 @@ const Navbar = ({ light }) => {
 
   const SolutionButton = () => (
     <button className="flex items-center font-light group transition h-9 px-3">
-      <p className="group-hover:opacity-75 transition">서비스 소개</p>
+      <p className="group-hover:opacity-75 transition font-bold">서비스 소개</p>
       <BiChevronDown className={`opacity-75 text-xl`} />
     </button>
   );
 
   const CompanyButton = () => (
     <button className="flex items-center font-light group transition h-9 px-3">
-      <p className="group-hover:opacity-75 transition">회사소개</p>
+      <p className="group-hover:opacity-75 transition font-bold">회사소개</p>
       <BiChevronDown className="opacity-75 text-xl" />
     </button>
   );
 
   const ResourcesButton = () => (
     <button className="flex items-center font-light group transition h-9 px-3">
-      <p className="group-hover:opacity-75 transition">Resources</p>
+      <p className="group-hover:opacity-75 transition font-bold">Resources</p>
       <BiChevronDown className="opacity-75 text-xl" />
     </button>
   );
@@ -183,7 +183,7 @@ const Navbar = ({ light }) => {
               dropdownVisibility
                 ? "slide-fade-in-dropdown"
                 : "slide-fade-out-dropdown"
-            } absolute top-9 -left-1 shadow-xl`}
+            } absolute top-9 -left-1 shadow-xl rounded-lg`}
           >
             {dropdown}
           </article>
@@ -201,7 +201,7 @@ const Navbar = ({ light }) => {
     >
       <div className="flex items-center text-sm font-nanum">
         <a
-          href="https://namsancompany.com"
+          href="/"
           aria-label="Homepage"
           className="flex items-center justify-center flex-shrink-0 transform transition hover:scale-105 mr-3"
         >
@@ -219,16 +219,17 @@ const Navbar = ({ light }) => {
           button={<ResourcesButton />}
           dropdown={<ResourcesDropdown />}
         />
-
-        <button className="hidden sm:flex items-center font-light group transition hover:opacity-75 px-3">
-          <p>Pricing</p>
-        </button>
+        <a href="/pricing">
+          <button className="hidden sm:flex items-center font-bold group transition hover:opacity-75 px-3">
+            <p>Pricing</p>
+          </button>
+        </a>
       </div>
       <div className="hidden sm:flex space-x-1 font-poppins sm:text-base text-sm justify-end items-center">
-        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum font-light text-sm">
+        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum text-sm font-bold">
           로그인
         </button>
-        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum font-light text-sm border">
+        <button className="transition hover:opacity-75 rounded-lg h-8 px-4 font-nanum text-sm border font-bold">
           회원가입
         </button>
       </div>

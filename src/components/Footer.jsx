@@ -58,16 +58,16 @@ const Footer = () => {
           <div className="flex flex-col items-center sm:items-start">
             <div className="text-sm font-bold font-nanum">서비스 소개</div>
             <div className="text-xs font-nanum mt-6 space-y-4 items-center sm:items-start">
-              <a href="/" className="hover:underline text-center sm:text-start">
+              <a href="/service/company" className="hover:underline text-center sm:text-start">
                 <p>기업을 위한 솔루션</p>
               </a>
-              <a href="/" className="hover:underline text-center sm:text-start">
+              <a href="/service/developer" className="hover:underline text-center sm:text-start">
                 <p className="mt-4">개발자를 위한 솔루션</p>
               </a>
-              <a href="/" className="hover:underline text-center sm:text-start">
+              <a href="/pricing" className="hover:underline text-center sm:text-start">
                 <p className="mt-4">어시스턴트 / PM</p>
               </a>
-              <a href="/" className="hover:underline text-center sm:text-start">
+              <a href="/pricing" className="hover:underline text-center sm:text-start">
                 <p className="mt-4">Pricing</p>
               </a>
             </div>
