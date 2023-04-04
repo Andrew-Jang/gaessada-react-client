@@ -315,7 +315,7 @@ const MainPage = () => {
             <Cell
               icon={FourthType4}
               title="전문 어시스턴트 배정"
-              text1="각 기업마다 남산 소속 어시스턴트가"
+              text1="각 기업마다 국제인 소속 어시스턴트가"
               text2="배정되어 언어적 장벽을 허물어 줍니다."
             />
             <Cell
