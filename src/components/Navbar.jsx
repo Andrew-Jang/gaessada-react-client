@@ -221,7 +221,7 @@ const Navbar = ({ light }) => {
         />
         <a href="/pricing">
           <button className="hidden sm:flex items-center font-bold group transition hover:opacity-75 px-3">
-            <p>Pricing</p>
+            <p>FAQ</p>
           </button>
         </a>
       </div>

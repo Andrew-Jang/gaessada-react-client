@@ -116,17 +116,37 @@ const Pricing = () => {
               <p className="text-sm font-nanum ml-3">고객 지원 및 분쟁 해결</p>
             </div>
             <div className="flex">
-              <img className="w-5 object-contain" src={CheckFill} alt="" />
+              <img
+                className="w-5 object-contain"
+                src={includes > 1 ? CheckFill : CheckEmpty}
+                alt=""
+              />
               <p className="text-sm font-nanum ml-3">
                 개발자 매칭 시 마일스톤 검증
               </p>
             </div>
             <div className="flex">
-              <img className="w-5 object-contain" src={CheckFill} alt="" />
-              <p className="text-sm font-nanum ml-3">월 30시간 요청 가능</p>
+              <img
+                className="w-5 object-contain"
+                src={includes > 2 ? CheckFill : CheckEmpty}
+                alt=""
+              />
+              <p
+                className={`${
+                  includes > 3 && "font-bold"
+                } text-sm font-nanum ml-3`}
+              >
+                {includes > 3
+                  ? "업무시간 상시 요청 가능"
+                  : "월 30시간 요청 가능"}
+              </p>
             </div>
             <div className="flex">
-              <img className="w-5 object-contain" src={CheckFill} alt="" />
+              <img
+                className="w-5 object-contain"
+                src={includes > 3 ? CheckFill : CheckEmpty}
+                alt=""
+              />
               <p className="text-sm font-nanum ml-3">중간관리 및 소통 보조</p>
             </div>
           </div>
@@ -170,14 +190,14 @@ const Pricing = () => {
               isYear={optionIndex}
             />
             <PriceCard
-              price={60}
+              price={40}
               plan={"스탠다드 플랜"}
               text="월 30시간에 한에 업무시간 아무 때나 어시스턴트의 도움을 요청할 수 있습니다."
               includes={3}
               isYear={optionIndex}
             />
             <PriceCard
-              price={100}
+              price={160}
               plan={"엔터프라이즈 플랜"}
               text="기업과 개발자 사이에 개발 지식을 보유하고 언어에 능통한 PM이 배정됩니다."
               includes={4}
