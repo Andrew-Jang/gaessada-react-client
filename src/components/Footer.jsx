@@ -76,19 +76,19 @@ const Footer = () => {
             <div className="text-sm font-bold font-nanum mt-12 sm:mt-0">회사소개</div>
             <div className="text-xs font-nanum mt-6 space-y-4 items-center sm:items-start">
               <a href="/" className="hover:underline text-center sm:text-start">
-                <p>Partners</p>
+                <p>협력사</p>
               </a>
               <a href="/" className="hover:underline text-center sm:text-start">
                 <p className="mt-4">Team & Careers</p>
               </a>
               <a href="/" className="hover:underline text-center sm:text-start">
-                <p className="mt-4">Blog</p>
+                <p className="mt-4">블로그</p>
+              </a>
+              <a href="/" className="hover:underline text-center sm:text-start">
+                <p className="mt-4">뉴스/미디어</p>
               </a>
               <a href="/" className="hover:underline text-center sm:text-start">
                 <p className="mt-4">Investor Relations</p>
-              </a>
-              <a href="/" className="hover:underline text-center sm:text-start">
-                <p className="mt-4">Media Kit</p>
               </a>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Footer = () => {
             <div className="text-sm font-bold font-nanum mt-12 sm:mt-0">Resources</div>
             <div className="text-xs font-nanum mt-6 space-y-4 items-center sm:items-start">
               <a href="/" className="hover:underline text-center sm:text-start">
-                <p>Developer Discord</p>
+                <p>FAQ</p>
               </a>
               <a href="/" className="hover:underline text-center sm:text-start">
                 <p className="mt-4">커뮤니티</p>
