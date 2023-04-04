@@ -82,38 +82,37 @@ const Navbar = ({ light }) => {
     <ul className="bg-white text-black rounded-lg p-5 w-56 text-sm">
       <p className="font-semibold font-sans text-gray-600 mb-2">내부 항목</p>
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/62a540c630b948e8817bdb36f262d5c8"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
-        <div className="flex items-center">Partners</div>
+        <div className="flex items-center">협력사</div>
       </a>
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/Team-Careers-b5db488235794b8a996b1b037878de86"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center">Team & Careers</div>
       </a>
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/8b9dfd324d174c1ca0024cc84e899825"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
-        <div className="flex items-center">Blog</div>
+        <div className="flex items-center">블로그</div>
       </a>
 
       <div className="w-full h-px bg-gray-300 mb-6 mt-3"></div>
       <p className="font-semibold font-sans text-gray-600 mb-2">외부 항목</p>
-
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/7f34a912fa764803aa270f1f21754d5e"
+        className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
+      >
+        <div className="flex items-center">뉴스/미디어</div>
+      </a>
+      <a
+        href="https://candle-chemistry-608.notion.site/5bfc7fb3a6234942bf9ab43be65268f3?v=2e8c1d8335954f6a923bd196baaa2d1a"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center">Investor Relations</div>
-      </a>
-      <a
-        href="/service"
-        className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
-      >
-        <div className="flex items-center">Media Kit</div>
       </a>
     </ul>
   );
@@ -121,25 +120,25 @@ const Navbar = ({ light }) => {
   const ResourcesDropdown = () => (
     <ul className="bg-white text-black rounded-lg p-5 w-56 text-sm">
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/FAQ-9b9927f37295435dbe5114157a498e48"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
-        <div className="flex items-center">Developer Discord</div>
+        <div className="flex items-center">FAQ</div>
       </a>
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/e5ec81c45bd141f49b716ce8fc7b9b0e"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center">커뮤니티</div>
       </a>
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/08aae9cfc4bb4b1ea1dbcbdafd6a6b1a"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center">고객센터</div>
       </a>
       <a
-        href="/service"
+        href="https://candle-chemistry-608.notion.site/Legal-9faf14d01dd14883ab0096f1702e0824"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center">Legal</div>
