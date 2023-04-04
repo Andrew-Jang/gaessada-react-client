@@ -85,7 +85,7 @@ const Navbar = ({ light }) => {
         href="/service"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
-        <div className="flex items-center">Partners</div>
+        <div className="flex items-center">협력사</div>
       </a>
       <a
         href="/service"
@@ -97,23 +97,22 @@ const Navbar = ({ light }) => {
         href="/service"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
-        <div className="flex items-center">Blog</div>
+        <div className="flex items-center">블로그</div>
       </a>
 
       <div className="w-full h-px bg-gray-300 mb-6 mt-3"></div>
       <p className="font-semibold font-sans text-gray-600 mb-2">외부 항목</p>
-
+      <a
+        href="/service"
+        className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
+      >
+        <div className="flex items-center">뉴스/미디어</div>
+      </a>
       <a
         href="/service"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center">Investor Relations</div>
-      </a>
-      <a
-        href="/service"
-        className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
-      >
-        <div className="flex items-center">Media Kit</div>
       </a>
     </ul>
   );
@@ -124,7 +123,7 @@ const Navbar = ({ light }) => {
         href="/service"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
-        <div className="flex items-center">Developer Discord</div>
+        <div className="flex items-center">FAQ</div>
       </a>
       <a
         href="/service"
@@ -221,7 +220,7 @@ const Navbar = ({ light }) => {
         />
         <a href="/pricing">
           <button className="hidden sm:flex items-center font-bold group transition hover:opacity-75 px-3">
-            <p>FAQ</p>
+            <p>Pricing</p>
           </button>
         </a>
       </div>
