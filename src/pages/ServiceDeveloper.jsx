@@ -134,7 +134,7 @@ const ServiceDeveloper = () => {
             className="font-nanum mt-4 break-keep text-xs leading-6"
           >
             언어 장벽에 대해 걱정할 필요가 없습니다. 대부분의 회사들은
-            기본적으로 영어를 구사하지만, 남산컴퍼니 또한 당신이 정착할 수
+            기본적으로 영어를 구사하지만, kookje.in 또한 당신이 정착할 수
             있도록 영어와 한국어에 능통한 어시스턴트를 배정합니다. 어시스턴트는
             다음을 수행합니다:
           </p>

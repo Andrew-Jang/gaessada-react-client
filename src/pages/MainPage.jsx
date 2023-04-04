@@ -481,7 +481,7 @@ const MainPage = () => {
         >
           <p className="font-nanum text-2xl font-bold">협력사</p>
           <p className="font-nanum mt-2 mb-16">
-            남산컴퍼니는 아래의 단체와 함께합니다.
+            kookje.in은 아래의 단체와 함께합니다.
           </p>
           <img src={Partner1} alt="" className="h-20" draggable={false} />
         </div>

@@ -25,7 +25,7 @@ const Footer = () => {
                 draggable={false}
               />
             </a>
-            <p className="text-lg font-nanum font-bold">남산컴퍼니</p>
+            <p className="text-lg font-nanum font-bold">kookje.in</p>
           </div>
 
           <div className="flex">
