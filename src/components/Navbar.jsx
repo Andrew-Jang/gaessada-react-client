@@ -1,5 +1,6 @@
 import React from "react";
-import LogoSimple from "../assets/logo_simple.png";
+import LogoWhite from "../assets/logo_white.png";
+import LogoGreen from "../assets/logo_green.png";
 import { BiChevronDown } from "react-icons/bi";
 import { MdOutlinePerson, MdWorkOutline } from "react-icons/md";
 import { RiCustomerServiceLine } from "react-icons/ri";
@@ -205,9 +206,9 @@ const Navbar = ({ light }) => {
           className="flex items-center justify-center flex-shrink-0 transform transition hover:scale-105 mr-3"
         >
           <img
-            src={LogoSimple}
-            alt="Namsan logo"
-            className="w-9 object-contain"
+            src={light ? LogoGreen : LogoWhite}
+            alt="Kookjein logo"
+            className="h-8 object-contain"
             draggable={false}
           />
         </a>

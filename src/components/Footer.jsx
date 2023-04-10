@@ -1,5 +1,5 @@
 import React from "react";
-import LogoSimple from "../assets/logo_simple.png";
+import LogoWhite from "../assets/logo_white.png";
 
 const Footer = () => {
   return (
@@ -14,18 +14,17 @@ const Footer = () => {
         <div className="px-4 sm:px-12 text-xs flex flex-col sm:items-start items-center">
           <div className="flex mb-8 items-center space-x-2">
             <a
-              href="https://namsancompany.com"
+              href="https://kookjein.com"
               aria-label="Homepage"
               className="flex items-center justify-center text-white flex-shrink-0 transform transition hover:scale-105 mr-3"
             >
               <img
-                src={LogoSimple}
-                alt="Namsan logo"
-                className="w-8 object-contain"
+                src={LogoWhite}
+                alt="Kookjein logo"
+                className="h-8 object-contain"
                 draggable={false}
               />
             </a>
-            <p className="text-lg font-nanum font-bold">kookje.in</p>
           </div>
 
           <div className="flex">
