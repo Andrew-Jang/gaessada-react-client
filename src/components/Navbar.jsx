@@ -12,7 +12,7 @@ const Navbar = ({ light }) => {
   const { t, i18n } = useTranslation("navBar");
 
   function changeLanguage() {
-    i18n.language === "en"
+    i18n.language.includes("en")
       ? i18n.changeLanguage("ko")
       : i18n.changeLanguage("en");
   }
