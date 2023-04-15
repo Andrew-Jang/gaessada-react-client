@@ -23,13 +23,15 @@ import LeftArrow from "../assets/main/left_arrow.png";
 import RightArrow from "../assets/main/right_arrow.png";
 import Checkmark from "../assets/main/checkmark.png";
 import TechStack from "../assets/main/techstack.png";
-import WelcomeText from "../assets/welcome_text.png";
 import Lanyard from "../assets/main/lanyard.png";
 import Partner1 from "../assets/main/partner1.png";
 import { AiFillStar } from "react-icons/ai";
 import Footer from "../components/Footer";
+import { useTranslation } from 'react-i18next';
 
 const MainPage = () => {
+  const { t } = useTranslation('mainPage');
+
   const WelcomeSection = () => {
     const [heroIndex, setHeroIndex] = useState(0);
 
@@ -49,23 +51,23 @@ const MainPage = () => {
     const heros = [
       {
         image: Hero1,
-        title: "(주)픽톨로지, 프론트엔드",
-        name: "모 알가잘리 (Mo Alghazali)",
+        title: t("hero1.title"),
+        name:  t("hero1.name"),
       },
       {
         image: Hero4,
-        title: "(주)픽톨로지, 프론트엔드",
-        name: "세린 다우드 (Sereen Daud)",
+        title: t("hero2.title"),
+        name:  t("hero2.name"),
       },
       {
         image: Hero2,
-        title: "(주)버틱비, 노드 개발자",
-        name: "아마드 사피 (Ahmad Safi)",
+        title: t("hero3.title"),
+        name:  t("hero3.name"),
       },
       {
         image: Hero3,
-        title: "턴업, iOS 개발자",
-        name: "안드레 볼츠키 (Andre volchki)",
+        title: t("hero4.title"),
+        name:  t("hero4.name"),
       },
     ];
     useEffect(() => {
@@ -126,8 +128,8 @@ const MainPage = () => {
             <AiFillStar />
             <AiFillStar />
           </div>
-          <p className="text-white text-sm mt-2">{title}</p>
-          <p className="text-white text-sm mt-1">{name}</p>
+          <p className="text-white text-sm mt-2 font-bold">{title}</p>
+          <p className="text-white text-sm mt-1 font-bold">{name}</p>
         </div>
         <img
           src={img}
@@ -155,7 +157,7 @@ const MainPage = () => {
             className="flex flex-col justify-center h-full z-20 sm:mt-0 mt-48 px-4 sm:px-12"
           >
             <img
-              src={WelcomeText}
+              src={t("welcomeText")}
               alt=""
               className="object-contain"
               draggable={false}
@@ -163,9 +165,9 @@ const MainPage = () => {
             <div className="w-full mt-8 flex justify-center sm:justify-start">
               <button
                 style={{ backgroundColor: "#1FAD72" }}
-                className="text-white text-sm px-4 py-2 rounded-full shadow hover:opacity-90 transition font-nanum font-semibold"
+                className="text-white text px-4 py-2 rounded-full shadow hover:opacity-90 transition font-nanum font-semibold"
               >
-                무료 개발자 매칭 시작
+                {t("welcomeButton")}
               </button>
             </div>
           </div>
@@ -229,7 +231,12 @@ const MainPage = () => {
         style={{ maxWidth: "1280px" }}
         className="flex items-center justify-between sm:flex-row flex-col px-4 sm:space-x-24 sm:pr-12"
       >
-        <img src={Lanyard} alt="" className="max-w-xs -mt-12" draggable={false} />
+        <img
+          src={Lanyard}
+          alt=""
+          className="max-w-xs -mt-12"
+          draggable={false}
+        />
         <div className="flex flex-col items-center sm:ml-16 sm:mt-32 mt-12 font-nanum">
           <p className="text-3xl font-bold">3000명의 글로벌 인재를</p>
           <p className="text-3xl font-bold mt-2">만나보세요.</p>
@@ -269,7 +276,12 @@ const MainPage = () => {
             2023년 2월 기준
           </div>
         </div>
-        <img src={TechStack} alt="" className="max-w-lg px-4" draggable={false} />
+        <img
+          src={TechStack}
+          alt=""
+          className="max-w-lg px-4"
+          draggable={false}
+        />
       </div>
     </div>
   );
@@ -342,7 +354,8 @@ const MainPage = () => {
       {
         img: Process1,
         step: "Step 1",
-        title: "우리 기업에 필요한 인재의 기술력과 요구사항을 간편하게 등록하세요!",
+        title:
+          "우리 기업에 필요한 인재의 기술력과 요구사항을 간편하게 등록하세요!",
         text1:
           "여러 명의 인재가 필요할 경우 여러 개의 채용 공고를 등록할 수 있습니다.",
         text2:
@@ -368,7 +381,8 @@ const MainPage = () => {
       {
         img: Process4,
         step: "Step 4",
-        title: "기업의 만족도를 우선시하는 해외 개발자 채용 시스템은 시작일 뿐입니다.",
+        title:
+          "기업의 만족도를 우선시하는 해외 개발자 채용 시스템은 시작일 뿐입니다.",
         text1: "에스크로를 통해 대금을 안전하게 처리할 수 있습니다.",
         text2: "문제가 생기면 언제든지 어시스턴트한테 요청 할 수 있습니다.",
       },
