@@ -12,8 +12,12 @@ import Solution5 from "../assets/service/solution5.png";
 import Solution6 from "../assets/service/solution6.png";
 import CompanyDevs from "../assets/service/company_devs.png";
 import Footer from "../components/Footer";
+import { useTranslation } from "react-i18next";
 
 const ServiceCompany = () => {
+
+  const { t } = useTranslation("serviceCompany");
+
   const WelcomeSection = () => {
     return (
       <div
@@ -39,7 +43,7 @@ const ServiceCompany = () => {
                 style={{ backgroundColor: "#1FAD72" }}
                 className="text-white text-sm px-4 py-2 rounded-full shadow hover:opacity-90 transition font-nanum font-semibold"
               >
-                무료 개발자 매칭 시작
+                {t("welcomeButton")}
               </button>
             </div>
           </div>
