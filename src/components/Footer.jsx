@@ -106,7 +106,7 @@ const Footer = () => {
                 <p className="mt-4">{t("company.menu2")}</p>
               </a>
               <a
-                href="https://candle-chemistry-608.notion.site/8b9dfd324d174c1ca0024cc84e899825"
+                href="https://candle-chemistry-608.notion.site/Tech-65b1bae7371f461db0238f6cabe18484"
                 className="hover:underline text-center sm:text-start"
               >
                 <p className="mt-4">{t("company.menu3")}</p>

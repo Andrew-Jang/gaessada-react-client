@@ -57,7 +57,7 @@ const Navbar = ({ light }) => {
             <div className="w-full flex flex-col items-start space-y-px">
               <p className="font-semibold">{t("service.title2")}</p>
               <p className="text-xs text-gray-500 group-hover:text-blue-500">
-              {t("service.subtitle2")}
+                {t("service.subtitle2")}
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ const Navbar = ({ light }) => {
             <div className="w-full flex flex-col items-start space-y-px">
               <p className="font-semibold">{t("service.title3")}</p>
               <p className="text-xs text-gray-500 group-hover:text-blue-500">
-              {t("service.subtitle3")}
+                {t("service.subtitle3")}
               </p>
             </div>
           </div>
@@ -93,7 +93,9 @@ const Navbar = ({ light }) => {
 
   const CompanyDropdown = () => (
     <ul className="bg-white text-black rounded-lg p-5 w-56 text-sm">
-      <p className="font-semibold font-sans text-gray-600 mb-2">{t("company.internal")}</p>
+      <p className="font-semibold font-sans text-gray-600 mb-2">
+        {t("company.internal")}
+      </p>
       <a
         href="https://candle-chemistry-608.notion.site/62a540c630b948e8817bdb36f262d5c8"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
@@ -107,14 +109,16 @@ const Navbar = ({ light }) => {
         <div className="flex items-center">{t("company.team")}</div>
       </a>
       <a
-        href="https://candle-chemistry-608.notion.site/8b9dfd324d174c1ca0024cc84e899825"
+        href="https://candle-chemistry-608.notion.site/Tech-65b1bae7371f461db0238f6cabe18484"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
       >
         <div className="flex items-center">{t("company.blog")}</div>
       </a>
 
       <div className="w-full h-px bg-gray-300 mb-6 mt-3"></div>
-      <p className="font-semibold font-sans text-gray-600 mb-2">{t("company.external")}</p>
+      <p className="font-semibold font-sans text-gray-600 mb-2">
+        {t("company.external")}
+      </p>
       <a
         href="https://candle-chemistry-608.notion.site/7f34a912fa764803aa270f1f21754d5e"
         className="w-full h-10 text-gray-700 flex items-center group hover:text-blue-500 font-medium"
