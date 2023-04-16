@@ -12,17 +12,26 @@ import Pricing from "./pages/Pricing";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { kr, en } from "./locales";
+import { ko, en } from "./locales";
+import XHR from "i18next-xhr-backend";
 
 function App() {
+  const options = {
+    order: ["querystring", "navigator"],
+    lookupQuerystring: "lng",
+  };
   i18n
     .use(LanguageDetector)
     .use(initReactI18next)
+    .use(XHR)
     .init({
-      resources: { en, kr },
-      fallbackLng: ["kr", "en"],
+      resources: { en, ko },
+      defaultNS: "common",
+      supportedLngs: ["en", "ko"],
+      ns: ["common"],
+      fallbackLng: "en",
       interpolation: { escapeValue: false },
-      detection: { order: ["path", "navigator"] },
+      detection: options,
     });
 
   return (

@@ -1,7 +1,7 @@
-import * as localeKr from "./kr";
+import * as localeKo from "./ko";
 import * as localeEn from "./en";
 
-const kr = { ...localeKr };
+const ko = { ...localeKo };
 const en = { ...localeEn };
 
-export { kr, en };
+export { ko, en };
