@@ -23,14 +23,13 @@ import LeftArrow from "../assets/main/left_arrow.png";
 import RightArrow from "../assets/main/right_arrow.png";
 import Checkmark from "../assets/main/checkmark.png";
 import TechStack from "../assets/main/techstack.png";
-import Lanyard from "../assets/main/lanyard.png";
 import Partner1 from "../assets/main/partner1.png";
 import { AiFillStar } from "react-icons/ai";
 import Footer from "../components/Footer";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const MainPage = () => {
-  const { t } = useTranslation('mainPage');
+  const { t } = useTranslation("mainPage");
 
   const WelcomeSection = () => {
     const [heroIndex, setHeroIndex] = useState(0);
@@ -52,22 +51,22 @@ const MainPage = () => {
       {
         image: Hero1,
         title: t("hero1.title"),
-        name:  t("hero1.name"),
+        name: t("hero1.name"),
       },
       {
         image: Hero4,
         title: t("hero2.title"),
-        name:  t("hero2.name"),
+        name: t("hero2.name"),
       },
       {
         image: Hero2,
         title: t("hero3.title"),
-        name:  t("hero3.name"),
+        name: t("hero3.name"),
       },
       {
         image: Hero3,
         title: t("hero4.title"),
-        name:  t("hero4.name"),
+        name: t("hero4.name"),
       },
     ];
     useEffect(() => {
@@ -232,21 +231,21 @@ const MainPage = () => {
         className="flex items-center justify-between sm:flex-row flex-col px-4 sm:space-x-24 sm:pr-12"
       >
         <img
-          src={Lanyard}
+          src={t("second.lanyard")}
           alt=""
           className="max-w-xs -mt-12"
           draggable={false}
         />
         <div className="flex flex-col items-center sm:ml-16 sm:mt-32 mt-12 font-nanum">
-          <p className="text-3xl font-bold">3000명의 글로벌 인재를</p>
-          <p className="text-3xl font-bold mt-2">만나보세요.</p>
-          <p className="mt-12">UI/UX 퍼블리싱부터, 프런트엔드, 백엔드,</p>
-          <p>모바일 앱, DB 설계, AI, 블록체인 개발자까지</p>
-          <p className="mt-6">사전 테스트와 평점 시스템을 통해</p>
-          <p>실력이 검증된 개발자가 기다리고 있어요.</p>
+          <p className="text-3xl font-bold">{t("second.title1")}</p>
+          <p className="text-3xl font-bold mt-2">{t("second.title2")}</p>
+          <p className="mt-12">{t("second.body1")}</p>
+          <p>{t("second.body2")}</p>
+          <p className="mt-6">{t("second.body3")}</p>
+          <p>{t("second.body4")}</p>
 
           <div className="mt-16 text-xs w-full flex justify-end">
-            2023년 2월 기준
+            {t("second.timestamp")}
           </div>
         </div>
       </div>
@@ -263,17 +262,17 @@ const MainPage = () => {
         className="flex items-center justify-center sm:flex-row flex-col-reverse sm:space-x-24 sm:pl-12"
       >
         <div className="flex flex-col items-center mt-12 sm:mt-0 font-nanum">
-          <p className="text-3xl font-bold">40+ 다양한 스킬셋.</p>
-          <p className="text-3xl font-bold mt-2">풀스텍 개발자</p>
-          <p className="mt-12">저희 개발자들은 다양한 스킬셋을</p>
-          <p className="">보유하고 있습니다.</p>
-          <p className="mt-6">필요한 기술 스택이나 툴셋이 있으시면</p>
-          <p>가능한 범위 내에서 맞는 개발자를 매칭해드립니다.</p>
-          <p className="mt-6">AI, 빅데이터, 블록체인 등 전문적인</p>
-          <p>스킬셋이 필요하시면 문의해 주세요.</p>
+          <p className="text-3xl font-bold">{t("third.title1")}</p>
+          <p className="text-3xl font-bold mt-2">{t("third.title2")}</p>
+          <p className="mt-12">{t("third.body1")}</p>
+          <p className="">{t("third.body2")}</p>
+          <p className="mt-6">{t("third.body3")}</p>
+          <p>{t("third.body4")}</p>
+          <p className="mt-6">{t("third.body5")}</p>
+          <p>{t("third.body6")}</p>
 
           <div className="mt-16 text-xs w-full flex justify-end">
-            2023년 2월 기준
+            {t("third.timestamp")}
           </div>
         </div>
         <img
@@ -303,44 +302,44 @@ const MainPage = () => {
       <div className="flex w-screen items-center justify-center sm:flex-row flex-col py-24">
         <div style={{ maxWidth: "1280px" }}>
           <p className="font-nanum text-lg mb-16 px-4">
-            이제는 한국 기업도 외국인 개발자를 채용할 수 있습니다.
+            {t("fourth.sectionTitle")}
           </p>
           <div className="grid sm:grid-cols-3 grid-cols-1 px-4 gap-16">
             <Cell
               icon={FourthType1}
-              title="상위 3% 개발자"
-              text1="세계적으로 인정받는 개발자 프로그램"
-              text2="Gazaskygeeks의 개발자를 매칭해드립니다."
+              title={t("fourth.1.title")}
+              text1={t("fourth.1.body1")}
+              text2={t("fourth.1.body2")}
             />
             <Cell
               icon={FourthType2}
-              title="맞춤형 어시스턴트"
-              text1="각 기업마다 어시스턴트 혹은 PM이"
-              text2="배정되어 소통의 장벽을 허물어줍니다."
+              title={t("fourth.2.title")}
+              text1={t("fourth.2.body1")}
+              text2={t("fourth.2.body2")}
             />
             <Cell
               icon={FourthType3}
-              title="간편한 월급 지급"
-              text1="에스크로 시스템을 통해 안전한"
-              text2="해외 월급지급이 이루어집니다."
+              title={t("fourth.3.title")}
+              text1={t("fourth.3.body1")}
+              text2={t("fourth.3.body2")}
             />
             <Cell
               icon={FourthType4}
-              title="전문 어시스턴트 배정"
-              text1="각 기업마다 국제인 소속 어시스턴트가"
-              text2="배정되어 언어적 장벽을 허물어 줍니다."
+              title={t("fourth.4.title")}
+              text1={t("fourth.4.body1")}
+              text2={t("fourth.4.body2")}
             />
             <Cell
               icon={FourthType5}
-              title="비용 절감"
-              text1="한국 개발자 채용 대비 40% 이상"
-              text2="비용을 절감할 수 있습니다."
+              title={t("fourth.5.title")}
+              text1={t("fourth.5.body1")}
+              text2={t("fourth.5.body2")}
             />
             <Cell
               icon={FourthType6}
-              title="채용 만족도 유지"
-              text1="매칭 후 1개월 이내 다른 개발자를"
-              text2="원하시면 새롭게 매칭해드립니다."
+              title={t("fourth.6.title")}
+              text1={t("fourth.6.body1")}
+              text2={t("fourth.6.body2")}
             />
           </div>
         </div>
@@ -354,37 +353,30 @@ const MainPage = () => {
       {
         img: Process1,
         step: "Step 1",
-        title:
-          "우리 기업에 필요한 인재의 기술력과 요구사항을 간편하게 등록하세요!",
-        text1:
-          "여러 명의 인재가 필요할 경우 여러 개의 채용 공고를 등록할 수 있습니다.",
-        text2:
-          "프런트엔드, 백엔드, AWS 기능사 등 자세히 등록할수록 효율적으로 개발자 매칭이 됩니다.",
+        title: t("fifth.1.title"),
+        text1: t("fifth.1.text1"),
+        text2: t("fifth.1.text2"),
       },
       {
         img: Process2,
         step: "Step 2",
-        title: "채용 등록을 마치면 적합한 다수의 해외 개발자와 매칭됩니다.",
-        text1:
-          "여러명의 개발자와 대화를 통해 우리 기업에 필요한 최고의 적합자를 찾을 수 있습니다.",
-        text2: "매칭된 개발자와 마일스톤에 대해 소통하고 합의 할 수 있습니다.",
+        title: t("fifth.2.title"),
+        text1: t("fifth.2.text1"),
+        text2: t("fifth.2.text2"),
       },
       {
         img: Process3,
         step: "Step 3",
-        title: "어시스턴트에게 마일스톤 검증을 요청할 수 있습니다.",
-        text1:
-          "업무 범위와 일정 등을 협의한 후 어시스턴트에게 검증을 요청해 안전한 계약을 할 수 있습니다.",
-        text2:
-          "철저한 채용 시스템을 통해 분쟁 걱정 없이 채용을 하되 혹시 모를 상황에 대비해서 어시스턴트가 분쟁 해결을 도와줍니다.",
+        title: t("fifth.3.title"),
+        text1: t("fifth.3.text1"),
+        text2: t("fifth.3.text2"),
       },
       {
         img: Process4,
         step: "Step 4",
-        title:
-          "기업의 만족도를 우선시하는 해외 개발자 채용 시스템은 시작일 뿐입니다.",
-        text1: "에스크로를 통해 대금을 안전하게 처리할 수 있습니다.",
-        text2: "문제가 생기면 언제든지 어시스턴트한테 요청 할 수 있습니다.",
+        title: t("fifth.4.title"),
+        text1: t("fifth.4.text1"),
+        text2: t("fifth.4.text2"),
       },
     ];
     const BarCell = ({ title, index }) => (
@@ -453,14 +445,14 @@ const MainPage = () => {
           className="flex flex-col w-full items-center h-full px-4"
         >
           <p className="font-nanum text-lg mb-16 px-4 max-w-4xl w-full">
-            채용 등록부터 완료까지 안전하고 빠른 절차로 시작하세요.
+            {t("fifth.sectionTitle")}
           </p>
 
           <div className="flex w-full mb-12 max-w-4xl px-4">
-            <BarCell index={0} title={"1. 채용 등록"} />
-            <BarCell index={1} title={"2. 개발자 매칭"} />
-            <BarCell index={2} title={"3. 마일스톤 검증"} />
-            <BarCell index={3} title={"4. 채용 완료"} />
+            <BarCell index={0} title={t("fifth.1.bar")} />
+            <BarCell index={1} title={t("fifth.2.bar")} />
+            <BarCell index={2} title={t("fifth.3.bar")} />
+            <BarCell index={3} title={t("fifth.4.bar")} />
           </div>
           <div className="max-w-4xl w-full flex h-full">
             <button
@@ -493,10 +485,8 @@ const MainPage = () => {
           style={{ maxWidth: "1280px" }}
           className="flex flex-col items-center justify-center"
         >
-          <p className="font-nanum text-2xl font-bold">협력사</p>
-          <p className="font-nanum mt-2 mb-16">
-            kookje.in은 아래의 단체와 함께합니다.
-          </p>
+          <p className="font-nanum text-2xl font-bold">{t("sixth.title")}</p>
+          <p className="font-nanum mt-2 mb-16">{t("sixth.subtitle")}</p>
           <img src={Partner1} alt="" className="h-20" draggable={false} />
         </div>
       </div>
@@ -514,13 +504,13 @@ const MainPage = () => {
           className="flex flex-col items-center justify-center"
         >
           <p className="font-nanum mt-2 mb-12 text-xl text-white">
-            합리적인 가격으로 상위 3% 개발자를 채용하세요.
+            {t("seventh.title")}
           </p>
           <button
             style={{ backgroundColor: "#FFFFFF", color: "#0E5034" }}
             className="text-sm px-4 py-2 rounded-full shadow hover:opacity-90 transition font-nanum font-semibold"
           >
-            무료 개발자 매칭 시작
+            {t("seventh.button")}
           </button>
         </div>
       </div>
