@@ -1,5 +1,5 @@
 const footer = {
-  mode: "kr",
+  mode: "ko",
   address: {
     title: "ADD.",
     text: "서울특별시 중구 퇴계로 18길 33 504호",

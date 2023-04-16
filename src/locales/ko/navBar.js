@@ -1,7 +1,7 @@
 import FlagKr from "../../assets/flag_kr.png";
 
 const navBar = {
-  mode: "kr",
+  mode: "ko",
   language: "한국어",
   flag: FlagKr,
   pricing: "가격",

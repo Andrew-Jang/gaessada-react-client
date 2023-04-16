@@ -2,7 +2,7 @@ import WelcomeKor from "../../assets/main/welcome_kor.png";
 import LanyardKor from "../../assets/main/lanyard_kor.png";
 
 const mainPage = {
-  mode: "kr",
+  mode: "ko",
   welcomeText: WelcomeKor,
   welcomeButton: "무료 개발자 매칭 시작",
   hero1: {
