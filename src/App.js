@@ -14,6 +14,7 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { ko, en } from "./locales";
 import XHR from "i18next-xhr-backend";
+import Browse from "./pages/Browse";
 
 function App() {
   const options = {
@@ -37,6 +38,7 @@ function App() {
   return (
     <Routes>
       <Route path="/*" element={<MainPage />} />
+      <Route path="/browse" element={<Browse />} />
       <Route path="/service/company" element={<ServiceCompany />} />
       <Route path="/service/developer" element={<ServiceDeveloper />} />
       <Route path="/pricing" element={<Pricing />} />
